@@ -35,7 +35,7 @@ def main(configuration, init_distributed=False, predict=False):
 
     config = build_config(configuration)
 
-    # Logger should be registered after config is registered
+    # Logger should be registered after config is registered to the registry
     registry.register("writer", Logger(config, name="mmf.train"))
     trainer = build_trainer(config)
     trainer.load()
