@@ -1,5 +1,6 @@
 # Copyright (c) Facebook, Inc. and its affiliates.
 import time
+import math
 
 
 class Timer:
@@ -57,7 +58,7 @@ class Timer:
 
         time_str = ""
         for idx, item in enumerate(items):
-            if item != 0:
+            if item != 0 and item is not None and not math.isnan(item):
                 time_str = format[idx] % item + " " + time_str
 
         # Means no more time is left.
